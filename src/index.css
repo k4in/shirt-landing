@@ -1,3 +1,4 @@
+@import url("/fonts/fonts.css");
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -5,42 +6,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --background: oklch(0.975 0 0);
+  --foreground: oklch(0.175 0 0);
+  --card: oklch(0.975 0 0);
+  --card-foreground: oklch(0.175 0 0);
+  --popover: oklch(0.975 0 0);
+  --popover-foreground: oklch(0.175 0 0);
+  --primary: oklch(0.6466 0.283 348.17);
+  --primary-foreground: oklch(0.975 0 0);
+  /* --secondary: oklch(0.9046 0.06 347.38); */
+  --secondary: oklch(0.9404 0.037 347.05);
+  --secondary-foreground: oklch(0.175 0 0);
+  --muted: oklch(0.92 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.9404 0.037 347.05);
+  --accent-foreground: oklch(0.175 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.87 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --border: oklch(0.175 0 0);
+  --input: oklch(0.175 0 0);
+  --ring: oklch(0.6466 0.283 348.17);
+  /* --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
+  --chart-5: oklch(0.769 0.188 70.08); */
+  --radius: 0.44rem;
+  /* --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.87 0 0);
+  --sidebar-ring: oklch(0.87 0 0); */
 }
 
-.dark {
+/* .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -73,7 +75,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -112,6 +114,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* --font-sans: "", "sans-serif"; */
+  --font-sans: "IBM Plex Serif", "sans-serif";
 }
 
 @layer base {
@@ -120,5 +125,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .gradient-background {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("/public/images/sewingmachine.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
